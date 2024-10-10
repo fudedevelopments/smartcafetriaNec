@@ -1,18 +1,25 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smartcafetria/cart/cart_screen.dart';
+import 'package:smartcafetria/profile/profile_screen.dart';
+import 'package:smartcafetria/home/home_page.dart';
 import 'package:smartcafetria/landing_page/landiing_bloc/landing_page_bloc.dart';
+import 'package:smartcafetria/fav/fav_screen.dart';
 
 List<BottomNavigationBarItem> bottomnavItem = [
-  const BottomNavigationBarItem(icon: Icon(Icons.list), label: "Manage Users"),
+  const BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+  const BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "favouts"),
   const BottomNavigationBarItem(
-      icon: Icon(Icons.people), label: "Assign users"),
-  const BottomNavigationBarItem(
-      icon: Icon(Icons.person_2_outlined), label: "Account"),
+      icon: Icon(Icons.shopping_basket), label: "cart"),
+  const BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
 ];
 
 List<Widget> bottomnaviScreen = [
-
+  HomePage(),
+  const FavScreen(),
+  const CartScreen(),
+  const ProfileScreen()
 ];
 
 class LandingPage extends StatelessWidget {
